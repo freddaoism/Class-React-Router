@@ -24,6 +24,7 @@ import SignUpPage from "./SignUpPage";
 import { AuthContext } from "./AuthContext";
 import PrivateRoute from "./PrivateRoute";
 import AdminPage from "./AdminPage";
+import AssignmentPage from "./AssignmentPage";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -151,7 +152,7 @@ export default function NavBar() {
         </div>
         <Divider />
         <List>
-          {["Home", "Login", "Signup", "Drafts"].map((text, index) => (
+          {["Home", "Assignment", "Login", "Signup", "Drafts"].map((text, index) => (
             <ListItem button key={text} component={Link} to={"/" + text}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -183,7 +184,7 @@ export default function NavBar() {
          
             <PrivateRoute path="/Admin" component={AdminPage}/>
             <Route exact path="/home" component={HomePage} />
-          
+            <Route exact path="/assignment" component={AssignmentPage} />
             <Route exact path="/Login">
               <LoginPage />
             </Route>
